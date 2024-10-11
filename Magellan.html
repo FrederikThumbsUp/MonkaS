@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferdinand Magellan</title>
+    <style>
+         body, * {
+            cursor: url('wand.png'), auto !important;
+        }
+        
+        body {
+            margin: 0;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+
+        ul {
+            list-style: none;
+            /* de her tre gør der ikke er noget mærkeligt rund om knapperne */
+            margin: 0;
+            padding: 0;
+            background-color: #ff0000;
+            text-align: center;
+            position: fixed;
+            /* de her tre - gør mine href står i toppen og i midten */
+            top: 0;
+            width: 100%;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+
+
+        li {
+            display: inline-block;
+            background-color: #0056b3;
+            margin: 0 71px;
+        }
+
+        li a {
+            color: #30ff00;
+            /* selve tekst farven */
+            text-align: center;
+            padding: 35px 20px;
+            text-decoration: none;
+            /* så der ikke er streg under */
+        }
+
+        .button-container {
+            align-items: flex-start;
+            /*så jeg kan rykke den op og ned */
+            height: 56vh;
+        }
+
+        .button {
+            background-color: #04AA6D;
+            border: none;
+            color: #000000;
+            height: 3vh;
+            font-size: large;
+            font-family: Lucida Console, Courier New, monospace;
+        }
+
+
+        .button:hover {
+            background-color: #ff0000;
+            color: #000000;
+            transform: scale(2.14);
+            transition: background-color 10.8s, transform 2.7s;
+            /* zoom effekt + farveskift */
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="index.html">Den Mærkelige Forside</a></li>
+        <li><a href="EndnuEnSmukAften.html">Den Smukke Aften</a></li>
+        <li><a href="NoProblem.html">HELP!(no problem)</a></li>
+        <li><a href="About.html">ABOUT!</a></li>
+    </ul>
+
+    <div class="button-container">
+        <button class="button" onclick="nextBackground()">Til verdens ende vi sejler!</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = [
+            'boat1.jpg',
+            'boat2.jpg',
+            'boat3.jpg',
+            'boat4.jpg',
+            'boat5.jpg',
+            'boat6.jpg',
+            'boat7.jpg',
+            'boat8.jpg',
+            'boat9.jpg',
+            'boat10.jpg'
+        ];
+
+        function nextBackground() {
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            document.body.style.backgroundImage = "url('" + images[currentIndex] + "')";
+        }
+
+        document.body.style.backgroundImage = "url('" + images[currentIndex] + "')";
+
+    </script>
+
+</body>
+
+</html>

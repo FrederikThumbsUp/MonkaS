@@ -1,0 +1,118 @@
+body {
+    background-color: #000000; /* sort farve */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; /* alt tekst */
+    cursor: url('wand.png'), default; /* brug 'default' som fallback */
+    margin: 0; /* Fjerner standard margin */
+    padding: 0; /* Fjerner standard padding */
+}
+
+.text-center {
+    text-align: center; /* så quiz tekst står i midten */
+}
+
+.section-nav a {
+    color: #ffffff; /* bare farve, gør intet med tema */
+    font-size: 0.8rem; /* Størrelse på tekst */
+    padding: 4px; /* margin rundt om */
+}
+
+.container {
+    display: flex; /* ALT ER STÅR UNDER CONTAINER */
+    height: 100vh; /* Sikrer, at containeren fylder hele højden af skærmen */
+}
+
+.sidebar {
+    flex: 0 0 369px; /* fixer mindre ress */
+    display: flex;
+    flex-direction: column; /* fixer mindre ress */
+    align-items: center;
+    position: relative;
+    height: 100vh; /* Sikrer, at sidebars strækker sig over hele højden */
+    background-size: contain; /* THE FIX */
+    background-repeat: no-repeat; /* IK NOGET SPAM*/
+    background-position: center; /* MIDTER */
+}
+
+.left-sidebar {
+    background-image: url('alarm.gif'); /* Venstre billede som baggrund */
+}
+
+.right-sidebar {
+    background-image: url('alarm.gif'); /* Samme billede for højre sidebar */
+}
+
+
+.main-content {
+    flex: 1; 
+    padding: 18px; /* bredde på det i midten */
+}
+
+h1 {
+    font-size: 5rem; /* Størrelse på hovedoverskrift */
+}
+
+h2 {
+    font-size: 2rem; /* over sidebars og smiley text */
+    color: rgb(225, 255, 0);
+}
+
+h3 {
+    font-size: 2rem; /* skrift der forsvinder */
+    color: rgb(0, 0, 0); /* farven på mørkt tema */
+}
+
+.voresside {
+    background-color: #000000; /* skandaløs afsløring */
+    border: 2px solid #ff0000; /* rundt om */
+    padding: 25px; /* border rundt om, kan godt slettes */
+}
+
+img {
+    max-width: 100%; /* Sikrer, at billederne tilpasser sig containerens bredde */
+    height: auto; /* Bevarer billedets aspektforhold */
+    margin: -1px; /* så de overlapper */
+}
+
+button { /* resultat knap + skift tema knap */
+    margin: 14px; /* udenom  */
+    padding: 15px; /* indvendig */
+    font-size: 1.5rem;
+    background-color: #000000;
+    color: #5a55d1; /* teksten */
+}
+
+#result {
+    display: none; /* se resultat tekst */
+    font-weight: bold;
+    color: #DDA0DD;
+    font-size: 24px;
+}
+
+.dark-theme {
+    background-color: #000000; /* angivet i html boddy - class */
+    color: #ff0000; /* alt (også tekst) som er i body som ikke har egen styling */
+}
+
+.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Medieforespørgsler for responsivitet */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Skifter layout til lodret for små skærme */
+        align-items: stretch; /* Sikrer, at sidepaneler strækker sig over hele bredden */
+    }
+
+    .sidebar {
+        flex: none; /* Fjerner fast bredde på små skærme */
+        width: 100%; /* Sørger for, at sidebars fylder hele bredden */
+        height: auto; /* Tilpasser sidebarens højde på små skærme */
+    }
+
+    .main-content {
+        padding: 10px; /* Mindre padding i midten på små skærme */
+    }
+}
